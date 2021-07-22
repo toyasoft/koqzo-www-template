@@ -1,0 +1,88 @@
+.drawerMenu {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  z-index: 100;
+  width: 100%;
+  background: #000000;
+  left: 100vw;
+  transition: transform 500ms, visibility 500ms ease;
+  overflow-y: auto;
+  
+  z-index: 10002;
+  .header {
+    display: flex;
+    align-items: center;
+    // background: #ffffff;
+    width: 100%;
+    height: 70px;
+    justify-content: flex-end;
+    .title {
+      flex: 1;
+      line-height: 1em;
+      font-size: 39px;
+      padding: 20px;
+      color: #fafafa;
+      font-family: "PT Mono", monospace;
+      small {
+        padding-top: 1px;
+        font-size: 10px;
+        line-height: 1em;
+        display: block;
+      }
+      a {
+        display: block;
+        color: #ffffff;
+      }
+    }
+    .closeButton {
+      display: flex;
+      padding-right: 10px;
+      align-items: center;
+      @media (min-width: 960px) {
+        display: none;
+      }
+      button {
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+    }
+  }
+  nav {
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      border-top: #fafafa solid 1px;
+      li {
+        padding: 0;
+        margin: 0;
+        position: relative;
+        a {
+          padding: 15px 20px;
+          display: block;
+          color: #fafafa;
+          text-decoration: none;
+          font-size: 16px;
+          border-bottom: #fafafa solid 1px;
+        }
+        .icon {
+          position: absolute;
+          right: 15px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+}
+
+.drawerOpened {
+  visibility: visible;
+  transform: translate3d(-100vw, 0, 0);
+}
+.drawerClosed {
+  visibility: hidden;
+  transform: translate3d(0, 0, 0);
+}

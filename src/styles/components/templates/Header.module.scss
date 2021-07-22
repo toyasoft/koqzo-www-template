@@ -1,0 +1,131 @@
+.header {
+  position: fixed;
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  height: 70px;
+  z-index: 10001;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 1);
+  // transform: translateZ(3px);
+  transition: all 1500ms ease;
+  overflow: hidden;
+  // box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  .title {
+    flex: 1;
+    line-height: 1em;
+    font-size: 24px;
+    padding: 20px;
+    font-weight: 600;
+    small {
+      padding-top: 1px;
+      font-size: 12px;
+      line-height: 150%;
+      display: block;
+      @media (min-width: 768px) {
+        font-size: 12px;
+      }
+    }
+    a {
+      display: block;
+      color: #000000;
+    }
+  }
+
+  .menu {
+    display: none;
+    @media (min-width: 960px) {
+      display: block;
+    }
+    > ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      > li {
+        display: inline-block;
+        font-size: 14px;
+        padding: 0 15px;
+        > a {
+          text-decoration: none;
+          color: #000000;
+          height: 70px;
+          display: flex;
+          align-items: center;
+          transition: color 300ms ease-in-out;
+        }
+        .sns {
+          width: 20px;
+          height: 20px;
+        }
+      }
+      li.store {
+        position: relative;
+        button {
+          height: 70px;
+          color: #7f7f7f;
+          display: flex;
+          align-items: center;
+          background: none;
+          border: none;
+          font-size: 14px;
+          cursor: pointer;
+        }
+        ul {
+          box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+          position: absolute;
+          background: #ffffff;
+          margin: 0;
+          padding: 0;
+          width: 220px;
+          top: 70px;
+          right: 0;
+          visibility: hidden;
+          list-style: none;
+        }
+        ul.menuOpened {
+          visibility: visible;
+        }
+      }
+    }
+  }
+  .menuButton {
+    display: flex;
+    padding-right: 10px;
+    align-items: center;
+    @media (min-width: 960px) {
+      display: none;
+    }
+    button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      .close {
+        width: 30px;
+      }
+    }
+  }
+}
+.layer {
+  background: rgba(0, 0, 0, 0.2);
+  .title {
+    a {
+      color: #fafafa;
+    }
+  }
+  .menu {
+    ul {
+      li {
+        a {
+          color: #fafafa;
+        }
+      }
+    }
+  }
+}
+.unpinned {
+  transform: translateY(-76px);
+}
